@@ -1,0 +1,9 @@
+.env
+.env.local
+.claude/settings.local.json
+.claude/worktrees/
+.claude/logs/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.DS_Store
+Thumbs.db

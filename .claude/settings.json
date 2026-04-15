@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/vault-pulse.sh\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "echo 'Autopilot Active mode. Run vault check + maintenance + proactive recommendations.\n\n1. Load active-context, vault-state from mcp__memory\n2. Update _world-model.md\n3. Create Daily Note if missing\n4. Auto-fix missing frontmatter fields\n5. Output recommendations (urgent/maintenance/growth)\n6. Run /garden if >14 days since last run'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/wrapup-reminder.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/frontmatter-check.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
