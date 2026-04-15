@@ -4,7 +4,7 @@
 
 set -e
 
-VAULT_DIR="/Users/jwpark95/Documents/Knowledge-OS"
+VAULT_DIR="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "$0")/../.." && pwd)}"
 TODAY=$(date +%Y-%m-%d)
 YEAR=$(date +%Y)
 MONTH=$(date +%m)

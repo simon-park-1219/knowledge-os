@@ -6,7 +6,8 @@
     <string>com.knowledgeos.daily-autopilot</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/jwpark95/Documents/Knowledge-OS/.claude/hooks/daily-autopilot.sh</string>
+        <!-- Update this path to your vault location -->
+        <string>$HOME/my-vault/.claude/hooks/daily-autopilot.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
@@ -16,15 +17,13 @@
         <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/jwpark95/Documents/Knowledge-OS/.claude/logs/launchd-stdout.log</string>
+    <string>/tmp/knowledge-os-autopilot-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/jwpark95/Documents/Knowledge-OS/.claude/logs/launchd-stderr.log</string>
+    <string>/tmp/knowledge-os-autopilot-stderr.log</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
         <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
-        <key>HOME</key>
-        <string>/Users/jwpark95</string>
     </dict>
 </dict>
 </plist>

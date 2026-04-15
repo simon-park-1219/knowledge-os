@@ -2,7 +2,7 @@
 # Stop hook: /wrapup 리마인더
 # 세션 종료 시 wrapup을 실행하지 않았으면 알림
 
-VAULT_DIR="${CLAUDE_PROJECT_DIR:-/Users/jwpark95/Documents/Knowledge-OS}"
+VAULT_DIR="${CLAUDE_PROJECT_DIR:-.}"
 TODAY=$(date +%Y-%m-%d)
 DAILY_NOTE="$VAULT_DIR/60-Daily/$(date +%Y)/$(date +%m)/$TODAY.md"
 

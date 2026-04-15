@@ -2,7 +2,7 @@
 # SessionStart hook: vault 상태 빠른 펄스 체크
 # /autopilot보다 가볍게, 세션 시작 시 핵심 상태만 표시
 
-VAULT_DIR="${CLAUDE_PROJECT_DIR:-/Users/jwpark95/Documents/Knowledge-OS}"
+VAULT_DIR="${CLAUDE_PROJECT_DIR:-.}"
 TODAY=$(date +%Y-%m-%d)
 
 # 1. Inbox 미처리 항목 수

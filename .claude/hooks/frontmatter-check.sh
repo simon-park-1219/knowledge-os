@@ -12,7 +12,7 @@ case "$FILE_PATH" in
 esac
 
 # vault 내부 파일이 아니면 무시
-VAULT_DIR="${CLAUDE_PROJECT_DIR:-/Users/jwpark95/Documents/Knowledge-OS}"
+VAULT_DIR="${CLAUDE_PROJECT_DIR:-.}"
 case "$FILE_PATH" in
   "$VAULT_DIR"/*) ;;
   *) exit 0 ;;
