@@ -5,7 +5,7 @@ description: 대화 인사이트를 vault 위키 노트로 증류 — Query→Wi
 
 대화에서 발생한 인사이트를 vault 위키 노트로 증류(distill)하여 지식 자산화.
 
-Topic: $ARGUMENTS (증류할 인사이트 주제 — 예: "Karpathy LLM Wiki 패턴 분석", "마이데이터 API 인증 방식 비교")
+Topic: $ARGUMENTS (증류할 인사이트 주제 — 예: "Karpathy LLM Wiki 패턴 분석", "REST vs GraphQL API 설계 패턴 비교")
 
 Karpathy의 "Query→Wiki" 패턴 구현: 대화에서 생성된 좋은 답변을 다시 위키에 기록하는 피드백 루프.
 

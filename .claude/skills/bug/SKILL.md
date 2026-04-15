@@ -37,7 +37,7 @@ Follow this process:
    status: open
    project: "[project-name]"
    severity: [severity]
-   reporter: "Simon Park"
+   reporter: ""
    ---
    ```
 
