@@ -87,19 +87,44 @@ Knowledge OS works without MCP servers, but full functionality requires:
 
 ### Installation
 
-```bash
-# Clone the repo as your vault
-git clone https://github.com/simon-park-1219/knowledge-os.git my-vault
+**Option A: Plugin Marketplace (recommended)**
 
-# Open in Claude Code
-cd my-vault
-claude
+```bash
+# Add the marketplace
+/plugin marketplace add simon-park-1219/knowledge-os
+
+# Install the plugin
+/plugin install knowledge-os@knowledge-os-marketplace
+```
+
+**Option B: Direct from GitHub**
+
+```bash
+# Add and install in one step
+/plugin install --source github --repo simon-park-1219/knowledge-os
+```
+
+**Option C: Clone as standalone vault**
+
+```bash
+git clone https://github.com/simon-park-1219/knowledge-os.git my-vault
+cd my-vault && claude
+```
+
+### Setup
+
+After installation, initialize your vault:
+
+```bash
+# Copy infrastructure files to your vault root
+# (templates, bootstrap files for _world-model.md, _master-index.md, _changelog.md)
+# These are included in the plugin's infrastructure/ directory
 
 # Start with autopilot
 /autopilot
 ```
 
-> **First run**: `/autopilot` will detect it's a fresh vault and initialize automatically. Infrastructure files (`_world-model.md`, `_master-index.md`, `_changelog.md`) are pre-created with bootstrap content.
+> **First run**: `/autopilot` will detect it's a fresh vault and initialize automatically. Infrastructure files are included in the plugin's `infrastructure/` directory.
 
 ### First Session
 
@@ -112,21 +137,21 @@ claude
 
 ```
 knowledge-os/
-├── .claude/
-│   ├── agents/        # 6 specialized AI agents
-│   ├── commands/      # 19 slash commands
-│   ├── skills/        # Skill implementations
-│   ├── workflows/     # 6 multi-step pipelines
-│   ├── hooks/         # 4 automation hooks
-│   └── settings.json  # Hook configuration
-├── 50-Templates/      # 19 note templates
-├── 00-Inbox/          # Uncategorized captures
-├── 10-Projects/       # Active projects (with deadlines)
-├── 20-Areas/          # Ongoing responsibilities
-├── 30-Resources/      # Reference materials
-├── 40-Archives/       # Completed/inactive items
-├── 60-Daily/          # Daily notes (YYYY/MM/YYYY-MM-DD.md)
-├── CLAUDE.md          # System design document
+├── .claude-plugin/
+│   ├── plugin.json       # Plugin manifest
+│   └── marketplace.json  # Marketplace catalog
+├── agents/               # 6 specialized AI agents
+├── commands/             # 19 slash commands
+├── skills/               # 19 skill implementations
+├── workflows/            # 6 multi-step pipelines
+├── hooks/                # Automation hook scripts
+├── templates/            # 19 note templates
+├── infrastructure/       # Bootstrap files for new vaults
+│   ├── _world-model.md
+│   ├── _master-index.md
+│   ├── _changelog.md
+│   └── {PARA folders}/   # 00-Inbox, 10-Projects, etc.
+├── CLAUDE.md             # System design document
 └── README.md
 ```
 
@@ -209,23 +234,22 @@ The vault health score (0-100) tracks knowledge hygiene:
 
 ## Customization
 
-### Adding a new command
+### As a plugin
 
-Create `.claude/commands/my-command.md`:
-```markdown
-Description of what $ARGUMENTS should contain.
+After installing, the plugin's commands and agents are available globally. To extend:
 
-1. Step 1...
-2. Step 2...
-```
+- **Add commands**: Create `.claude/commands/my-command.md` in your project
+- **Add templates**: Create `50-Templates/my-template.md` in your vault
+- **Override hooks**: Configure hooks in your project's `.claude/settings.json`
 
-### Adding a new template
+### As a standalone vault
 
-Create `50-Templates/my-template.md` with YAML frontmatter and placeholder sections.
+Fork the repo and modify directly:
 
-### Configuring hooks
-
-Edit `.claude/settings.json` to add/modify event hooks (SessionStart, Stop, PostToolUse).
+- **Commands**: `commands/my-command.md`
+- **Skills**: `skills/my-skill/SKILL.md`
+- **Agents**: `agents/my-agent.md`
+- **Templates**: `templates/my-template.md`
 
 ## License
 

@@ -20,7 +20,7 @@ Obsidian + Claude Code 기반의 통합 Knowledge OS.
 | `20-Areas/` | 지속적 책임 영역 | startup, engineering, team-management |
 | `30-Resources/` | 참고 자료 | tech-notes, book-notes |
 | `40-Archives/` | 완료/비활성 항목 | 과거 프로젝트, 오래된 노트 |
-| `50-Templates/` | 모든 템플릿 | 원본은 절대 수정 금지; 대상 위치에 복사하여 사용 |
+| `templates/` | 모든 템플릿 | 원본은 절대 수정 금지; 대상 위치에 복사하여 사용 |
 | `60-Daily/` | 일일 노트 (YYYY/MM/YYYY-MM-DD.md) | 저널링, 데일리 로그 |
 
 ## MCP Servers (Recommended)
@@ -35,7 +35,7 @@ Obsidian + Claude Code 기반의 통합 Knowledge OS.
 
 ## Agents
 
-6개의 전문 에이전트가 정의되어 ��습니다 (`.claude/agents/`):
+6개의 전문 에이전트가 정의되어 ��습니다 (`agents/`):
 - **curator** — 노트 분류, 태그 정리, 중복 탐지, inbox triage, 자동 처리 모드(Autopilot 위임)
 - **writer** — 노트 작성, 템플릿 기반 문서 생성, 요약
 - **gardener** — 지식 정원 관리 + 품질 리뷰: orphan 노트, stale 콘텐츠, MOC 업데이트, 건강 점수, 노트 품질 검증
@@ -45,7 +45,7 @@ Obsidian + Claude Code 기반의 통합 Knowledge OS.
 
 ## Slash Commands
 
-`.claude/commands/`에 정의된 커맨드 (19종):
+`commands/`에 정의된 커맨드 (19종):
 - `/capture` — 빠른 아이디어 캡처 (Inbox에 저장)
 - `/research` — 웹 검색 + 노트 생성 (brave-search MCP 연동)
 - `/distill` — 대화 인사이트를 vault 위키 노트로 증류 (Query→Wiki 피드백 루프)
@@ -68,7 +68,7 @@ Obsidian + Claude Code 기반의 통합 Knowledge OS.
 
 ## Workflows
 
-`.claude/workflows/`에 정의된 워크플로우:
+`workflows/`에 정의된 워크플로우:
 - **idea-to-spec** — Idea Capture → Lean Canvas → Plan (Annotation Cycle) → Feature Spec → Code Scaffolding
 - **bug-lifecycle** — Bug Report → Investigation → Fix Tracking → Verification
 - **knowledge-gardening** — Orphan Scan → Stale Check → MOC Update → Tag Cleanup
@@ -145,7 +145,7 @@ Alfred-inspired 3-서브시스템 자동화 레이어:
 
 - **Conventional commits**: docs/feat/fix/refactor/chore
 - **Never store secrets** in vault files
-- **Always use templates** from `50-Templates/`
+- **Always use templates** from `templates/`
 - **Update relevant MOC** when creating new notes
 - **Frontmatter는 필수**: 모든 새 노트에 YAML frontmatter 포함
 - **Git으로 추적**: 중요한 변경 후 반드시 커밋

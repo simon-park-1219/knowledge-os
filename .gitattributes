@@ -1,4 +1,4 @@
 # GitHub linguist overrides
 # Shell scripts in hooks are infrastructure, not the project's primary language
-.claude/hooks/*.sh linguist-vendored
-.claude/hooks/*.plist linguist-vendored
+hooks/*.sh linguist-vendored
+hooks/*.plist linguist-vendored

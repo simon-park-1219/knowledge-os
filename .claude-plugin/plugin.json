@@ -1,0 +1,66 @@
+{
+  "name": "knowledge-os",
+  "description": "Obsidian + Claude Code knowledge management framework. 6 agents, 19 commands, 19 skills, 6 workflows, automated session lifecycle.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Simon Park"
+  },
+  "homepage": "https://github.com/simon-park-1219/knowledge-os",
+  "repository": "https://github.com/simon-park-1219/knowledge-os",
+  "license": "MIT",
+  "keywords": [
+    "knowledge-management",
+    "obsidian",
+    "para-method",
+    "zettelkasten",
+    "second-brain",
+    "automation",
+    "vault"
+  ],
+  "category": "productivity",
+  "commands": ["./commands/"],
+  "agents": [
+    "./agents/autopilot.md",
+    "./agents/business-analyst.md",
+    "./agents/code-analyst.md",
+    "./agents/curator.md",
+    "./agents/gardener.md",
+    "./agents/writer.md"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/vault-pulse.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/wrapup-reminder.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/frontmatter-check.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "knowledge-os-marketplace",
+  "owner": {
+    "name": "Simon Park"
+  },
+  "metadata": {
+    "description": "Knowledge OS — Obsidian + Claude Code knowledge management framework",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-os",
+      "source": "./",
+      "description": "Complete knowledge management system: 6 agents, 19 commands, 6 workflows, automated session lifecycle with PARA method + MOC navigation.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "tags": [
+        "knowledge-management",
+        "obsidian",
+        "para-method",
+        "automation",
+        "second-brain"
+      ]
+    }
+  ]
+}
