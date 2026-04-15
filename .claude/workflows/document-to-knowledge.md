@@ -215,7 +215,7 @@ Step 6: /commit 전략 기획 완료
 |---------------|-----------|
 | **idea-to-spec** | `/import` → PRD 수집 → `/spec`으로 스펙 강화 |
 | **knowledge-gardening** | `/garden`에서 business-documents 폴더도 점검 |
-| **daily-standup** | 수집된 문서가 Daily Note에 기록됨 |
+| **autopilot-pipeline** | 수집된 문서가 `/wrapup` 시 Daily Note에 기록됨 |
 | **bug-lifecycle** | PRD 분석에서 발견된 이슈 → `/bug`로 등록 |
 
 ---
