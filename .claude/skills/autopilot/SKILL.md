@@ -11,7 +11,11 @@ Options:
 - "full" (all 3 phases, ~5min)
 - "active" (full + 자동 실행 모드, ~10min) — 🟡 유지보수 항목을 사용자 확인 없이 바로 실행
 
-Run the Autopilot Agent to execute these phases:
+Run the Autopilot Agent to execute these phases.
+
+**Graceful Degradation**: If `mcp__memory` is not available, skip context load/save steps and operate with local file analysis only. Report: "⚠️ Memory server not configured. Running in local-only mode."
+
+**First Run**: If infrastructure files (`_world-model.md`, `_master-index.md`, `_changelog.md`) don't exist, create them with default bootstrap content before proceeding.
 
 ---
 

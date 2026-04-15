@@ -9,6 +9,8 @@ Topic: $ARGUMENTS (증류할 인사이트 주제 — 예: "Karpathy LLM Wiki 패
 
 Karpathy의 "Query→Wiki" 패턴 구현: 대화에서 생성된 좋은 답변을 다시 위키에 기록하는 피드백 루프.
 
+**Note**: If `_changelog.md` or `_master-index.md` don't exist, create them with default bootstrap content before appending.
+
 Follow this process:
 
 1. **Extract — 대화 인사이트 추출**:

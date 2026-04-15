@@ -72,7 +72,18 @@ Knowledge OS is a pre-configured Claude Code setup that transforms an Obsidian v
 
 - [Obsidian](https://obsidian.md/) (for viewing/editing notes)
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
-- Recommended MCP servers: `filesystem`, `brave-search`, `github`, `memory`, `sequential-thinking`
+
+### MCP Servers
+
+Knowledge OS works without MCP servers, but full functionality requires:
+
+| Server | Required? | Purpose | Without it |
+|--------|-----------|---------|------------|
+| `memory` | Recommended | Session context persistence (`/autopilot`, `/wrapup`) | Falls back to local-only mode |
+| `brave-search` | Optional | Web research (`/research`, `/propose`) | Use built-in WebSearch |
+| `filesystem` | Optional | File operations | Uses built-in Read/Write/Edit |
+| `github` | Optional | Issue/PR management (`/onboard`, `/sync`) | Skips GitHub features |
+| `sequential-thinking` | Optional | Complex analysis (`/analyze`) | Proceeds without structured reasoning |
 
 ### Installation
 
@@ -87,6 +98,8 @@ claude
 # Start with autopilot
 /autopilot
 ```
+
+> **First run**: `/autopilot` will detect it's a fresh vault and initialize automatically. Infrastructure files (`_world-model.md`, `_master-index.md`, `_changelog.md`) are pre-created with bootstrap content.
 
 ### First Session
 

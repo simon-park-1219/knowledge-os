@@ -3,7 +3,11 @@ Session startup automation — Knowledge OS morning routine.
 Mode: $ARGUMENTS (default: "full")
 Options: "quick" (heartbeat + light janitor only, ~2min), "full" (all 3 phases, ~5min)
 
-Run the Autopilot Agent to execute these phases:
+Run the Autopilot Agent to execute these phases.
+
+**Graceful Degradation**: If `mcp__memory` is not available, skip context load/save steps and operate with local file analysis only. Report: "⚠️ Memory server not configured. Running in local-only mode."
+
+**First Run**: If infrastructure files (`_world-model.md`, `_master-index.md`, `_changelog.md`) don't exist, create them from the default structure before proceeding.
 
 ---
 
